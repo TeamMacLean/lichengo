@@ -22,10 +22,4 @@ Suggests:
     enrichplot,
     here,
     readr
-Remotes:
-    github::TeamMacLean/aspergo,
-    github::TeamMacLean/astego,
-    github::TeamMacLean/chlogo,
-    github::TeamMacLean/cladogo,
-    github::TeamMacLean/trego,
-    github::TeamMacLean/xpgo
+
