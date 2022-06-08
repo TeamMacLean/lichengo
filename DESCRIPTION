@@ -22,3 +22,10 @@ Suggests:
     enrichplot,
     here,
     readr
+Remotes:
+    TeamMacLean/aspergo,
+    TeamMacLean/astego,
+    TeamMacLean/chlogo,
+    TeamMacLean/cladogo,
+    TeamMacLean/trego,
+    TeamMacLean/xpgo
