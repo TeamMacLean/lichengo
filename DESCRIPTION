@@ -23,9 +23,9 @@ Suggests:
     here,
     readr
 Remotes:
-    TeamMacLean/aspergo,
-    TeamMacLean/astego,
-    TeamMacLean/chlogo,
-    TeamMacLean/cladogo,
-    TeamMacLean/trego,
-    TeamMacLean/xpgo
+    github::TeamMacLean/aspergo,
+    github::TeamMacLean/astego,
+    github::TeamMacLean/chlogo,
+    github::TeamMacLean/cladogo,
+    github::TeamMacLean/trego,
+    github::TeamMacLean/xpgo
