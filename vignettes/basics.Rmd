@@ -1,6 +1,9 @@
 ---
-title: "Basics"
-output: rmarkdown::html_vignette
+title: "Basics GO analysis with lichengo"
+output: 
+  rmarkdown::html_vignette:
+    fig_width: 6
+    fig_height: 4
 vignette: >
   %\VignetteIndexEntry{basics}
   %\VignetteEngine{knitr::rmarkdown}
@@ -14,15 +17,113 @@ knitr::opts_chunk$set(
 )
 ```
 
-Load package
+# Introduction
+
+## lichengo
+
+`lichengo` is a package for generating gene ontology (GO) analysis for using genes of lichen-forming species.
+
+## Load package and data
+
+Load package.
 
 ```{r setup}
 library(lichengo)
 ```
 
-Check the collection of packages
+Check available assemblies.
+
+```{r check-assemblies}
+available_assemblies()
+```
+Select assembly for the species of interest.
+
+```{r select-assembly}
+assembly = 'treb_jgi'
+```
+
+Retrieve the list of genes for teh selected species. 
+
+```{r all-genes}
+genes <- all_genes(assembly)
+genes %>% head()
+```
+
+## Load expression data
+
+Import your expression data including - at least - the gene IDs, the log fold changes and the $p$-values. 
+
+The `lichengo` package offers an example of expression data for the available lichen-forming organisms. 
+
+```{r expression-file, message=FALSE}
+filename = paste(assembly, 'expression.csv', sep = '_')
+file <- system.file("extdata", filename, package = "lichengo", mustWork = TRUE)
+file
+```
+
+You can do that with `read_csv()`. Minimally it should contain the gene ID, the log fold change and the $p$-value.
+
+```{r expression-data}
+expression <- readr::read_csv(file)
+head(expression, 4) 
+```
+
+### Filter as required
+
+You can now filter the genes to select only the ones with e.g $p <= 0.05$, using `filter()`
+
+```{r filter-data, message=FALSE}
+filtered_expression <- filter(expression, p.adj <= 0.05)
+filtered_expression %>% head(., 4)
+```
+
+### Extract the gene ID
+
+You can now extract the `gene_id` column using the `$` syntax
+
+```{r, message=FALSE}
+selected_gene_ids <- filtered_expression$gene_id
+head(selected_gene_ids, 4)
+```
+
+
+## GO enrichement
+
+The GO enrichment is done in the `lichengo` package. Load that and use the `enrich()` function, passing it the vector of `selected_gene_ids` to calculate the enrichment.
+adjusted pvalue cutoff `pval` on enrichment tests to report. 
 
 ```{r}
-lichengo_packages()
+enrichment <- enrich(genes = selected_gene_ids, 
+  assembly = assembly, 
+  pval = 0.05)
+
+result_table <- as.data.frame(enrichment)
+head(result_table)
+```
+
+## Visualisation
+
+Visualisations can be done with the `enrichplot` package.
+
+```{r}
+library(enrichplot)
+```
+
+### Barplot
+
+```{r}
+barplot(enrichment, x = "GeneRatio", showCategory = 5)
+```
+
+
+```{r}
+mutate(enrichment, qscore = -log(p.adjust, base = 10)) %>% 
+    barplot(x = "qscore")
+```
+
+### Dotplot
+
+```{r}
+dotplot(enrichment, showCategory = 5)
 ```
 
