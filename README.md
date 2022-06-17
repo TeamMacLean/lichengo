@@ -1,9 +1,10 @@
 # lichengo
 
 <!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of `lichengo` is to do basic gene ontology (GO) analysis using genes of lichen-forming organisms. 
+The goal of `lichengo` is to do basic gene ontology (GO) analysis using genes of lichen-forming organisms,  including mycobiont _Aspergillus terreus_ and photobionts _Asterochloris glomerata_, _Trebouxia sp._ and _Chlorella sorokiniana_.
 
 ## Installation
 
@@ -21,7 +22,7 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(lichengo)
 
-# check currently available assemblies
+# check assemblies for lichen-forming organisms currently available
 available_assemblies()
 
 # more info in the vignette
@@ -38,7 +39,7 @@ Arnaud MB, Cerqueira GC, Inglis DO, Skrzypek MS, Binkley J, Chibucos MC, Crabtre
 
 ### Photobionts
 
-- [Asterochloris glomerata Cgr/DA1pho v2.0](https://genome.jgi.doe.gov/portal/Astpho2/Astpho2.download.html) 
+- [Asterochloris glomerata Cgr/DA1pho v2.0](https://genome.jgi.doe.gov/portal/Astpho2/Astpho2.download.html)
 
 Armaleo D, Müller O, Lutzoni F, Andrésson ÓS, Blanc G, Bode HB, Collart FR, Dal Grande F, Dietrich F, Grigoriev IV, Joneson S, Kuo A, Larsen PE, Logsdon JM Jr, Lopez D, Martin F, May SP, McDonald TR, Merchant SS, Miao V, Morin E, Oono R, Pellegrini M, Rubinstein N, Sanchez-Puerta MV, Savelkoul E, Schmitt I, Slot JC, Soanes D, Szövényi P, Talbot NJ, Veneault-Fourrey C, Xavier BB. The lichen symbiosis re-viewed through the genomes of Cladonia grayi and its algal partner Asterochloris glomerata. BMC Genomics. 2019 Jul 23;20(1):605. doi: 10.1186/s12864-019-5629-x
 
@@ -49,6 +50,3 @@ Greshake Tzovaras B, Segers FHID, Bicker A, Dal Grande F, Otte J, Anvar SY, Hank
 - [Chlorella sorokiniana UTEX 1602](https://phycocosm.jgi.doe.gov/Chloso1602_1/Chloso1602_1.home.html)
 
 Arriola MB, Velmurugan N, Zhang Y, Plunkett MH, Hondzo H, Barney BM. Genome sequences of Chlorella sorokiniana UTEX 1602 and Micractinium conductrix SAG 241.80: implications to maltose excretion by a green alga. Plant J. 2018 Feb;93(3):566-586. doi: 10.1111/tpj.13789
-
-
-
