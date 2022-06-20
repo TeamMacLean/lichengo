@@ -1,6 +1,6 @@
 Package: lichengo
 Title: GO analysis of lichens
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Clara", "Jegousse", , "clara.jegousse@tsl.ac.uk", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-3213-2510"))
 	person("Dan", "MacLean", , "dan.maclean@tsl.ac.uk", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1032-0887"))
