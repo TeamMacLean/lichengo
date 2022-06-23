@@ -2,6 +2,7 @@
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![DOI](https://zenodo.org/badge/{github_id}.svg)](https://zenodo.org/badge/10.1234/lichen.go/{github_id})
 <!-- badges: end -->
 
 The goal of `lichengo` is to do basic gene ontology (GO) analysis using genes of lichen-forming organisms,  including mycobiont _Aspergillus terreus_ and photobionts _Asterochloris glomerata_, _Trebouxia sp._ and _Chlorella sorokiniana_.
